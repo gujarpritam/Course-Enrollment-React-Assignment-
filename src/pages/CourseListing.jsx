@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function CourseListingPage() {
   const [data, setData] = useState([]);
@@ -38,7 +39,9 @@ function CourseListingPage() {
             return (
               <tr key={i}>
                 <td>{d.id}</td>
-                <td>{d.name}</td>
+                <td>
+                  <Link to="/courseDetail">{d.name}</Link>
+                </td>
                 <td>{d.instructor}</td>
               </tr>
             );
